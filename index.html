@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="jquery.js"></script>
-  <script src="handlebars.js"></script>
-  <script src="ember.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v1.3.0.js"></script>
+  <script src="http://builds.emberjs.com/tags/v1.7.0/ember.prod.js"></script>
+  <script src="http://builds.emberjs.com/tags/v1.7.0/ember.js"></script>
   <script src="ember-data.js"></script>
   <script src="app.js"></script>
-  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <title></title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <title>Ember App</title>
 </head>
 <body>
-
+  <script type="text/x-handlebars" data-template-name="application">
+   <div class="navbar" href='about'>About</div>
+   <div class="container">
+    <h1>Welcome to {{siteName}}</h1>
+    {{outlet}}
+   </div>
+   <footer class="container"></footer>
+  </script>
+  <script type="text/x-handlebars" data-template-name="index">
+    <h1>This is you moms Web Site</h1>
+  </script>
+  <script type="text/x-handlebars" data-template-name="about">
+    <h1>Not your moms Web Site</h1>
+  </script>
 </body>
 </html>
