@@ -12,7 +12,11 @@
 </head>
 <body>
   <script type="text/x-handlebars" data-template-name="application">
-   <div class="navbar" href='about'>About</div>
+   <div class="navbar">
+    {{#link-to 'index' class='navbar-brand'}}Home{{/link-to}}
+    {{#link-to 'about' class='navbar-brand'}}About{{/link-to}}
+    {{#link-to 'insult' class='navbar-brand'}}Insult{{/link-to}}
+  </div>
    <div class="container">
     <h1>Welcome to {{siteName}}</h1>
     {{outlet}}
@@ -24,6 +28,9 @@
   </script>
   <script type="text/x-handlebars" data-template-name="about">
     <h1>Not your moms Web Site</h1>
+  </script>
+  <script type="text/x-handlebars" data-template-name="insult">
+   <p>You are a {{insultContent}}</p>
   </script>
 </body>
 </html>
