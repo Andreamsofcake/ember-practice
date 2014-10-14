@@ -1,3 +1,4 @@
+'use strict'
 var App = Ember.Application.create({
   LOG_TRANSISITION: true
 });
@@ -5,12 +6,16 @@ var App = Ember.Application.create({
 App.Router.map(function() {
   this.route('about')
   this.route('insult')
-}); 
+});
+
+var newInsult = 'stinky monkey'
 
 App.InsultController = Ember.Controller.extend({
-  insultContent: 'snot nosed wombat'
+  insultContent: newInsult
 });
 
-App.IndexContoller = Ember.Controller.extend({
-  siteName: 'The Bomb'
-});
+// App.IndexContoller = Ember.Controller.extend({
+//   siteName: 'The Bomb'
+// });
+
+
