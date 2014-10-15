@@ -1,5 +1,5 @@
 'use strict'
-var App = Ember.Application.create({
+var App = window.App = Ember.Application.create({
   LOG_TRANSISITION: true
 });
 
@@ -8,14 +8,16 @@ App.Router.map(function() {
   this.route('insult')
 });
 
-var newInsult = 'stinky monkey'
+var arrayOfInsults = ['stinky monkey','bad speller', 'vermicious knid', 'bad coder'];
 
 App.InsultController = Ember.Controller.extend({
-  insultContent: newInsult
+  randomInsult: function() {
+    var insult = arrayOfInsults[Math.floor(Math.random()*arrayOfInsults.length)]
+    return insult
+  }.property()
 });
 
-// App.IndexContoller = Ember.Controller.extend({
-//   siteName: 'The Bomb'
-// });
 
-
+App.Controller = Ember.Controller.extend({
+  logo: 'monkey.png'
+});

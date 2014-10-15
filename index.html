@@ -18,7 +18,7 @@
     {{#link-to 'insult' class='navbar-brand'}}Insult{{/link-to}}
   </div>
    <div class="container">
-    <h1>Welcome to {{siteLogo}}</h1>
+    <h1>Welcome to <img {{bind-attr src='logo'}}alt='logo' height=150px/></h1>
     {{outlet}}
    </div>
    <footer class="container"></footer>
@@ -30,7 +30,7 @@
     <h1>Not your moms Web Site</h1>
   </script>
   <script type="text/x-handlebars" data-template-name="insult">
-   <p>You are a {{insultContent}}</p>
+   <p>You are a {{insultContent}} {{randomInsult}}</p>
   </script>
 </body>
 </html>
