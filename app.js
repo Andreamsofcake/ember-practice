@@ -6,16 +6,16 @@ var App = window.App = Ember.Application.create({
 App.Router.map(function() {
   this.route('about')
   this.route('insult')
-  this.resource('listOfInsults')
+  this.route('listOfInsults')
 });
 
 var arrayOfInsults = ['stinky monkey','bad speller', 'vermicious knid', 'bad coder'];
 var newArray = ['your mom', 'a bad apple', 'substitute chemistry teacher'];
 
 App.ListOfInsultsRoute = Ember.Route.extend({
-  module: function(){
+  model: function(){
     return newArray
-  }.property()
+  }
 });
 
 App.InsultController = Ember.Controller.extend({
@@ -27,5 +27,5 @@ App.InsultController = Ember.Controller.extend({
 
 App.Controller = Ember.Controller.extend({
   logo: 'monkey.png',
-  name:''
+  name: null
 });
