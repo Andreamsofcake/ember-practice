@@ -15,10 +15,13 @@
    <div class="navbar">
     {{#link-to 'index' class='navbar-brand'}}Home{{/link-to}}
     {{#link-to 'about' class='navbar-brand'}}About{{/link-to}}
-    {{#link-to 'insult' class='navbar-brand'}}Insult{{/link-to}}
+    {{#link-to 'insult' class='navbar-brand'}}Insult Me!{{/link-to}}
+    {{#link-to 'listOfInsults' class='navbar-brand'}}List{{/link-to}}
   </div>
    <div class="container">
-    <h1>Welcome to <img {{bind-attr src='logo'}}alt='logo' height=150px/></h1>
+    <h1>Welcome to <img {{bind-attr src='logo'}} alt='logo' height=150px/></h1>
+    {{input placeholder="input name here" value=name id="name"}}
+    <h4>{{name}}</h4>
     {{outlet}}
    </div>
    <footer class="container"></footer>
@@ -29,8 +32,15 @@
   <script type="text/x-handlebars" data-template-name="about">
     <h1>Not your moms Web Site</h1>
   </script>
-  <script type="text/x-handlebars" data-template-name="insult">
-   <p>You are a {{insultContent}} {{randomInsult}}</p>
+  <script type="text/x-handlebars" data-template-name="insult"> 
+   <p>You are a {{randomInsult}}</p>
+  </script>
+  <script type="text/x-handlebars" data-template-name="listOfInsults"> 
+   <ul>
+    {{#each item in module}}
+    <li>{{item}}</li>
+    {{/each}}
+    </ul>
   </script>
 </body>
 </html>

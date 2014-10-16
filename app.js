@@ -6,9 +6,17 @@ var App = window.App = Ember.Application.create({
 App.Router.map(function() {
   this.route('about')
   this.route('insult')
+  this.resource('listOfInsults')
 });
 
 var arrayOfInsults = ['stinky monkey','bad speller', 'vermicious knid', 'bad coder'];
+var newArray = ['your mom', 'a bad apple', 'substitute chemistry teacher'];
+
+App.ListOfInsultsRoute = Ember.Route.extend({
+  module: function(){
+    return newArray
+  }.property()
+});
 
 App.InsultController = Ember.Controller.extend({
   randomInsult: function() {
@@ -17,7 +25,7 @@ App.InsultController = Ember.Controller.extend({
   }.property()
 });
 
-
 App.Controller = Ember.Controller.extend({
-  logo: 'monkey.png'
+  logo: 'monkey.png',
+  name:''
 });
